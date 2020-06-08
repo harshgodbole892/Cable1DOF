@@ -54,6 +54,10 @@ using namespace arma;
 class constants
 {
 public:
+    
+    // Exe Globals:
+    std::string GenDir;
+    // Simulation Model:
 	double pi;
 	double m_p;
 	double m_w;
@@ -104,8 +108,11 @@ public:
     int disturbance_switch;
     
     // Constructor:
-    constants()
+    constants(std::string EnvGenDir)
     {
+        // Global Home Path for generated files:
+        GenDir = EnvGenDir;
+        
         // Numerical Constants
         pi=3.14159265;
         
