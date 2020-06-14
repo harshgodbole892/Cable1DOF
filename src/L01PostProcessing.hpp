@@ -395,125 +395,125 @@ void post_processing(double h, double t_start, double t_end, mat x_out, int calc
 
 	//Saving relevant data:
 
-	x_out.save("x_out.txt", raw_ascii);
-	H.save("H.txt", raw_ascii);
+	x_out.save(cst.GenDir + "x_out.txt", raw_ascii);
+	H.save(cst.GenDir + "H.txt", raw_ascii);
     
     
     if(cst.test_switch == 1)
     {
         if(cst.adaptive_switch == 1)
         {
-            rho.save("rho_3.txt", raw_ascii);
+            rho.save(cst.GenDir + "rho_3.txt", raw_ascii);
             //Tensions in the Cable
-            T_k1.save("T_k1_3.txt" , raw_ascii);
-            T_k2.save("T_k2_3.txt" , raw_ascii);
+            T_k1.save(cst.GenDir + "T_k1_3.txt" , raw_ascii);
+            T_k2.save(cst.GenDir + "T_k2_3.txt" , raw_ascii);
             
-            tau_1.save("tau_1_3.txt" , raw_ascii);
-            tau_2.save("tau_2_3.txt" , raw_ascii);
+            tau_1.save(cst.GenDir + "tau_1_3.txt" , raw_ascii);
+            tau_2.save(cst.GenDir + "tau_2_3.txt" , raw_ascii);
             
             
-            M_rho_e.save("M_rho_e_3.txt", raw_ascii);
-            M_rho_act.save("M_rho_act_3.txt", raw_ascii);
+            M_rho_e.save(cst.GenDir + "M_rho_e_3.txt", raw_ascii);
+            M_rho_act.save(cst.GenDir + "M_rho_act_3.txt", raw_ascii);
             
-            G_rho_e.save("G_rho_e_3.txt", raw_ascii);
-            G_rho_act.save("G_rho_act_3.txt", raw_ascii);
+            G_rho_e.save(cst.GenDir + "G_rho_e_3.txt", raw_ascii);
+            G_rho_act.save(cst.GenDir + "G_rho_act_3.txt", raw_ascii);
         }
         else
         {
-            rho.save("rho_4.txt", raw_ascii);
+            rho.save(cst.GenDir + "rho_4.txt", raw_ascii);
             //Tensions in the Cable
-            T_k1.save("T_k1_4.txt" , raw_ascii);
-            T_k2.save("T_k2_4.txt" , raw_ascii);
+            T_k1.save(cst.GenDir + "T_k1_4.txt" , raw_ascii);
+            T_k2.save(cst.GenDir + "T_k2_4.txt" , raw_ascii);
             
-            tau_1.save("tau_1_4.txt" , raw_ascii);
-            tau_2.save("tau_2_4.txt" , raw_ascii);
+            tau_1.save(cst.GenDir + "tau_1_4.txt" , raw_ascii);
+            tau_2.save(cst.GenDir + "tau_2_4.txt" , raw_ascii);
         }
     }
     else
     {
         if(cst.adaptive_switch == 1)
         {
-            rho.save("rho.txt", raw_ascii);
+            rho.save(cst.GenDir + "rho.txt", raw_ascii);
             //Tensions in the Cable
-            T_k1.save("T_k1_1.txt" , raw_ascii);
-            T_k2.save("T_k2_1.txt" , raw_ascii);
+            T_k1.save(cst.GenDir + "T_k1_1.txt" , raw_ascii);
+            T_k2.save(cst.GenDir + "T_k2_1.txt" , raw_ascii);
             
-            tau_1.save("tau_1_1.txt" , raw_ascii);
-            tau_2.save("tau_2_1.txt" , raw_ascii);
+            tau_1.save(cst.GenDir + "tau_1_1.txt" , raw_ascii);
+            tau_2.save(cst.GenDir + "tau_2_1.txt" , raw_ascii);
             
-            M_rho_e.save("M_rho_e_1.txt", raw_ascii);
-            M_rho_act.save("M_rho_act_1.txt", raw_ascii);
+            M_rho_e.save(cst.GenDir + "M_rho_e_1.txt", raw_ascii);
+            M_rho_act.save(cst.GenDir + "M_rho_act_1.txt", raw_ascii);
             
-            G_rho_e.save("G_rho_e_1.txt", raw_ascii);
-            G_rho_act.save("G_rho_act_1.txt", raw_ascii);
+            G_rho_e.save(cst.GenDir + "G_rho_e_1.txt", raw_ascii);
+            G_rho_act.save(cst.GenDir + "G_rho_act_1.txt", raw_ascii);
         }
         else
         {
-            rho.save("rho_2.txt", raw_ascii);
+            rho.save(cst.GenDir + "rho_2.txt", raw_ascii);
             //Tensions in the Cable
-            T_k1.save("T_k1_2.txt" , raw_ascii);
-            T_k2.save("T_k2_2.txt" , raw_ascii);
+            T_k1.save(cst.GenDir + "T_k1_2.txt" , raw_ascii);
+            T_k2.save(cst.GenDir + "T_k2_2.txt" , raw_ascii);
             
-            tau_1.save("tau_1_2.txt" , raw_ascii);
-            tau_2.save("tau_2_2.txt" , raw_ascii);
+            tau_1.save(cst.GenDir + "tau_1_2.txt" , raw_ascii);
+            tau_2.save(cst.GenDir + "tau_2_2.txt" , raw_ascii);
         }
     }
     
     if (cst.regressor_switch == 1)
     {
-        rho.save("rho_5.txt", raw_ascii);
+        rho.save(cst.GenDir + "rho_5.txt", raw_ascii);
     }
     if (cst.regressor_switch == 2)
     {
-        rho.save("rho_6.txt", raw_ascii);
+        rho.save(cst.GenDir + "rho_6.txt", raw_ascii);
     }
     if (cst.regressor_switch == 3)
     {
-        rho.save("rho_7.txt", raw_ascii);
+        rho.save(cst.GenDir + "rho_7.txt", raw_ascii);
     }
     
-    //rho_2.save("rho_2.txt", raw_ascii);
+    //rho_2.save(cst.GenDir + "rho_2.txt", raw_ascii);
     
-    rho_dot.save("rho_dot.txt", raw_ascii);
-    rho_dot_2.save("rho_dot_2.txt", raw_ascii);
+    rho_dot.save(cst.GenDir + "rho_dot.txt", raw_ascii);
+    rho_dot_2.save(cst.GenDir + "rho_dot_2.txt", raw_ascii);
 
-    rho_des.save("rho_des.txt", raw_ascii);
-    rho_des_dot.save("rho_des_dot.txt", raw_ascii);
+    rho_des.save(cst.GenDir + "rho_des.txt", raw_ascii);
+    rho_des_dot.save(cst.GenDir + "rho_des_dot.txt", raw_ascii);
     
-    rho_mu.save("rho_mu.txt", raw_ascii);
-    rho_mu_dot.save("rho_mu_dot.txt", raw_ascii);
+    rho_mu.save(cst.GenDir + "rho_mu.txt", raw_ascii);
+    rho_mu_dot.save(cst.GenDir + "rho_mu_dot.txt", raw_ascii);
 
-    M_rho_e.save("M_rho_e.txt", raw_ascii);
-    M_rho_act.save("M_rho_act.txt", raw_ascii);
-    M_rho_e_error.save("M_rho_e_error.txt", raw_ascii);
+    M_rho_e.save(cst.GenDir + "M_rho_e.txt", raw_ascii);
+    M_rho_act.save(cst.GenDir + "M_rho_act.txt", raw_ascii);
+    M_rho_e_error.save(cst.GenDir + "M_rho_e_error.txt", raw_ascii);
 
-    G_rho_e.save("G_rho_e.txt", raw_ascii);
-    G_rho_act.save("G_rho_act.txt", raw_ascii);
-    G_rho_e_error.save("G_rho_e_error.txt", raw_ascii);
+    G_rho_e.save(cst.GenDir + "G_rho_e.txt", raw_ascii);
+    G_rho_act.save(cst.GenDir + "G_rho_act.txt", raw_ascii);
+    G_rho_e_error.save(cst.GenDir + "G_rho_e_error.txt", raw_ascii);
 
     
-    t.save("t.txt" , raw_ascii);   
+    t.save(cst.GenDir + "t.txt" , raw_ascii);
 
-    tau_1.save("tau_1.txt" , raw_ascii);   
-    tau_2.save("tau_2.txt" , raw_ascii);   
-    tau_c.save("tau_c.txt" , raw_ascii);
+    tau_1.save(cst.GenDir + "tau_1.txt" , raw_ascii);
+    tau_2.save(cst.GenDir + "tau_2.txt" , raw_ascii);
+    tau_c.save(cst.GenDir + "tau_c.txt" , raw_ascii);
 
-    theta_1_out.save("theta_1_out.txt" , raw_ascii);   
-    theta_2_out.save("theta_2_out.txt" , raw_ascii);   
+    theta_1_out.save(cst.GenDir + "theta_1_out.txt" , raw_ascii);
+    theta_2_out.save(cst.GenDir + "theta_2_out.txt" , raw_ascii);
    
     //Tensions in the Cable
-    T_k1.save("T_k1.txt" , raw_ascii);
-    T_k2.save("T_k2.txt" , raw_ascii);
+    T_k1.save(cst.GenDir + "T_k1.txt" , raw_ascii);
+    T_k2.save(cst.GenDir + "T_k2.txt" , raw_ascii);
 
     //Errors in nonlinear forces:
-    W_a_tilde.save("W_a_tilde.txt" , raw_ascii);
-    W_a_cap.save("W_a_cap.txt" , raw_ascii);
+    W_a_tilde.save(cst.GenDir + "W_a_tilde.txt" , raw_ascii);
+    W_a_cap.save(cst.GenDir + "W_a_cap.txt" , raw_ascii);
 
     if(calc_lagrange_multiplier==1)
 	{    
-	  lambda_1.save("lambda_1.txt", raw_ascii);
+	  lambda_1.save(cst.GenDir + "lambda_1.txt", raw_ascii);
 	}    
 
 
-    cout << "Text saving process complete" << endl;
+    cout << "C++ : Text saving process complete" << endl;
 }

@@ -1,12 +1,12 @@
 #
-# TODO: Move `libmongoclient.a` to /usr/local/lib so this can work on production servers
+# Project name: Lumped Mass L01 tests.
 #
  
 CC := g++ # This is the main compiler
 # CC := clang --analyze # and comment out the linker last line for sanity
 SRCDIR := src
 BUILDDIR := build
-TARGET := bin/runner
+TARGET := bin/L01SimExe
 
 # SourceCode Location 
 SRCEXT := cpp
