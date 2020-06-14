@@ -27,8 +27,12 @@
  
  [1] Dynamic Modelling and Control of Cable-actuated systems, Harsh Godbole, Master's Thesis, McGill University, 2017.
  
- Tempelate by Harsh Godbole. 
+ Armadillo documentation is available at:
+ http://arma.sourceforge.net/docs.html
+ 
+ Tempelate by Harsh Godbole.
  Reference credits to Dr. James Richard Forbes and Ryan Caverly.
+ 
  */
 
 #include <iostream>
@@ -44,58 +48,17 @@
 using namespace std;
 using namespace arma;
 
-//Tempelate by Harsh Godbole. Reference credits Dr. James Richard Forbes
-
-
-// Armadillo documentation is available at:
-// http://arma.sourceforge.net/docs.html
+//Stiffness Matrix Functions Prototype:
+#ifndef L01STIFFNESSMAT_H
+#define L01STIFFNESSMAT_H
 
 //6. Stiffness matrix dependencies on state variables.
-vec Partial_k(int n, double theta_1, vec q_1, constants cst)
-{
-	mat K_1 = zeros<mat>(n + 2, n + 2);
-	for (int i = 0; i < n + 2; i++)
-		for (int j = 0; j < n + 2;j++)
-			if (i == j &&i != 0)
-			{
-				K_1(i, j) = 1;
-			}
-	K_1 = ((n+1)*cst.E*cst.R*cst.A / ((cst.L - cst.R*theta_1) *(cst.L - cst.R*theta_1)))*K_1;
-	
-	vec K = zeros<vec>(n + 2);
-	
-	// Partial_M_partial_q turns out to be a row matrix. Its transpose is used in Lagranges Equation.
-	// Predefining the matrix M as a column matrix such that the function trans() does not need to be applied twice. 
-
-	K.subvec(0, 0) = 0.5*trans(q_1)*K_1*q_1;
-	return K;
-}
+vec Partial_k(int n, double theta_1, vec q_1, constants cst);
 
 //7. Stiffness matrix
-mat K_matrix(int n, double theta_1, constants cst)
-{
-	mat K_1 = zeros<mat>(n + 2, n + 2);
-	for (int i = 0; i < n + 2; i++)
-		for (int j = 0; j < n + 2; j++)
-			if (i == j &&i != 0)
-			{
-				K_1(i, j) = 1;
-			}
-	K_1 = ((n+1)*cst.E*cst.A / ((cst.L - cst.R*theta_1)))*K_1;
-
-	return K_1;
-}
+mat K_matrix(int n, double theta_1, constants cst);
 
 //8. Damping Matrix
-mat damp(int n, constants cst)
-{
-	mat D_1 = zeros<mat>(n + 2, n + 2);
-	for (int i = 0; i < n + 2; i++)
-		for (int j = 0; j < n + 2; j++)
-			if (i == j &&i != 0)
-			{
-				D_1(i, j) = 1;
-			}
-	D_1=cst.c_i*D_1;		
-	return D_1;
-}
+mat damp(int n, constants cst);
+
+#endif
