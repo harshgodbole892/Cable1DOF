@@ -33,6 +33,7 @@
 
 #include <iostream>
 #include <armadillo>
+#include <cstdio>
 
 //#include <conio.h>
 
@@ -72,7 +73,7 @@ mat  RK4(double h,
 	/*deciding the number of iterations required*/
 
 	long long int a = (t_end - t_start) / h;
-	cout << "Number of Iterations Estimated for current RK4 "<< a << endl; //counter FLAG
+	cout << "C++ : Number of Iterations Estimated for current RK4 "<< a << endl; //counter FLAG
 	mat x = zeros<mat>(s, a);
 	vec t_s = zeros<vec>(a);
 
@@ -85,7 +86,7 @@ mat  RK4(double h,
 		{
             x.col(i) = x_IC;
             t_s(i) = t_start;
-            cout<<i<<"/"<<a<<"\r";
+            cout<<"\r"<<i<<"/"<<a;
 		}
 		else
 		{	/*calculating 4 constants*/
@@ -138,9 +139,11 @@ mat  RK4(double h,
 			/*propogating time*/
 			t_s(i) = t_s(i - 1) + h;
 		}
-        cout<<i<<"/"<<a<<"\r";             //cout<<"flag before"<<endl;//test
+        if (i%1000 == 0) cout<<"\r"<<i<<"/"<<a;
+        fflush(stdout);
 
 	}
+    cout<<"\r"<<a<<"/"<<a<<endl;
 	return x;
 	
 }

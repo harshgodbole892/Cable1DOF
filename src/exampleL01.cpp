@@ -139,7 +139,7 @@ int main(int argc, char** argv) {
 	    h       = 0.0001;     // Step Size in seconds
     
 	    long long int a = (t_end - t_start) / h; //Need better counting Subroutine
-	    cout << "Number of Iterations Estimated "<<a<<endl;
+	    cout << "C++ : Number of Iterations Estimated "<<a<<endl;
 	    mat x_out=zeros<mat>(x_length_1, a);
 	                                                    //vec x_out(x_length_1);//test
     
@@ -149,12 +149,12 @@ int main(int argc, char** argv) {
          -------------------------------------
          */
     
-	    cout<< "RK4 process started"<<endl;
+	    cout<< "C++ : RK4 process started"<<endl;
     
 	    x_out = RK4(h, t_start, t_end, x_IC, cst, ODE);
 	                                                    //x_out=ODE(x_IC,1,cst);//test
     
-	    cout << "RK4 process complete"<<endl;
+	    cout << "C++ : RK4 process complete"<<endl;
 	    
     
          /*
@@ -171,11 +171,11 @@ int main(int argc, char** argv) {
     
 	    // Post processing and file export
         
-        cout<< "Post processing started"<<endl;
+        cout<< "C++ : Post processing started"<<endl;
     
         post_processing(h,t_start,t_end,x_out,calc_lagrange_multiplier,cst);
     
-        cout<< "Post processing completed"<<endl;
+        cout<< "C++ : Post processing completed"<<endl;
      
         
         // **** Plot-scripts in matlab:
