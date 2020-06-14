@@ -1,0 +1,5 @@
+build
+Generated
+bin
+config/__pycache__
+src/pysrc/__pycache__
